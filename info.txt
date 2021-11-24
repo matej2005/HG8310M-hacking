@@ -1,2 +1,2 @@
 cpu: SD5116 ARMv7
-nor flash: FL128SA (S25F128P)
+nor flash: FL128SA (S25F128P) https://html.alldatasheet.com/html-pdf/210795/SPANSION/S25FL128P/386/1/S25FL128P.html
