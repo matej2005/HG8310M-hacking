@@ -1,0 +1,2 @@
+cpu: SD5116
+nor flash: FL128SA (S25F128P)
