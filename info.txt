@@ -1,2 +1,2 @@
-cpu: SD5116
+cpu: SD5116 ARMv7
 nor flash: FL128SA (S25F128P)
