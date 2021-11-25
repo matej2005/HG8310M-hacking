@@ -1,0 +1,447 @@
+HuaWei StartCode 2012.02 (R15C10 Apr 25 2015 - 16:46:11)
+
+SPI:  
+startcode select the uboot to load
+the high RAM is :8000103c
+startcode uboot boot count:0
+Boot load address :0x40000
+Use the UbootA to load success
+
+
+U-Boot 2010.03 (R15C10 Apr 18 2016 - 21:18:17)
+
+DRAM:  32 MB
+Boot From Bootrom
+Chip Type is SD5116S
+SFC : cs0 unrecognized JEDEC id 00000000, extended id 00000000
+SFC: extend id 0x4d00
+SFC: cs1 s25sl12800 (16384 Kbytes)
+SFC: Detected s25sl12800 with page size 256 K, total 16 MB
+SFC: already protect ON !
+SFC: sfc_read flash offset 0x80000, len 0x40000, memory buf 0x81ea0008
+*** Warning - bad CRC, using default environment
+
+In:    serial
+Out:   serial
+Err:   serial
+PHY power down !!!
+[main.c__5678]::CRC:0x0, Magic1:0x5a5a5a5a, Magic2:0xa5a5a5a5, count:0, CommitedArea:0x0, Active:0x0, RunFlag:0x0
+slave_paramA in flash, CRC:0x3d80a8b4, Magic1:0x5a5a5a5a, Magic2:0xa5a5a5a5, count:0, CommitedArea:0x0, Active:0x0, RunFlag:0x0
+
+use slave_paramA which is from flash, the RAM data is not OK!
+
+Start from main system(0x0)!
+CRC:0x3d80a8b4, Magic1:0x5a5a5a5a, Magic2:0xa5a5a5a5, count:1, CommitedArea:0x0, Active:0x0, RunFlag:0x0
+
+Main area (A) is OK!
+
+CRC:0x93e83925, Magic1:0x5a5a5a5a, Magic2:0xa5a5a5a5, count:1, CommitedArea:0x0, Active:0x0, RunFlag:0x0
+
+Bootcmd:bootm 0x1c140054
+BootArgs:noalign mem=31M console=ttyAMA1,115200 root=/dev/mtdblock8 mtdparts=hi_sfc:0x40000(startcode)ro,0x40000(bootA)ro,0x40000(bootB)ro,0x40000(flashcfg)ro,0x40000(slave_param)ro,0x200000(kernelA)ro,0x200000(kernelB)ro,0x480000(rootfsA)ro,0x480000(rootfsB)ro,0x180000(file_system),-(reserved) pcie0_sel=x1 maxcpus=0 user_debug=0x1f panic=1 skb_priv=128
+U-boot Start from NORMAL Mode!
+## Booting kernel from Legacy Image at 1c140054 ...
+   Image Name:   Linux-2.6.34.10_sd5115v100_wr4.3
+   Image Type:   ARM Linux Kernel Image (uncompressed)
+   Data Size:    719860 Bytes = 703 kB
+   Load Address: 80e08000
+   Entry Point:  80e08001
+   Memory Start: 80100000
+
+SFC : cs0 unrecognized JEDEC id 00000000, extended id 00000000
+SFC: extend id 0x4d00
+SFC: cs1 s25sl12800 (16384 Kbytes)
+SFC: Detected s25sl12800 with page size 256 K, total 16 MB
+   Loading Kernel Image ... SFC: sfc_read flash offset 0x140094, len 0xafbf4, memory buf 0x80108000
+OK
+OK
+   kernel loaded at 0x80108000, end = 0x801b7bf4
+
+Starting kernel ...
+
+Get SD511x chip id...5116S...
+Uncompressing Linux... done, booting the kernel.
+Kernel Early-Debug on Level 0 
+
+ V: 0xF8100000 P: 0x00010100 S: 0x00300000 T: 0
+
+ V: 0xF8400000 P: 0x00010400 S: 0x00200000 T: 12
+
+ V: 0xF8A00000 P: 0x00010A00 S: 0x00080000 T: 0
+
+ V: 0xF9000000 P: 0x00011000 S: 0x05000000 T: 0
+
+early_init	73	[arch/arm/mach-sd511x/core.c]
+
+sd511x_map_io	232	[arch/arm/mach-sd511x/core.c]
+
+sd511x_gic_init_irq	89	[arch/arm/mach-sd511x/core.c]
+
+sd511x_timer_init	498	[arch/arm/mach-sd511x/core.c]
+
+sd511x_timer_init	518	[arch/arm/mach-sd511x/core.c]
+
+hi_kernel_wdt_init	209	[arch/arm/mach-sd511x/hi_drv_wdt.c]
+
+sd511x_init	319	[arch/arm/mach-sd511x/core.c]
+
+sd511x_init	328	[arch/arm/mach-sd511x/core.c]
+
+sd511x_init	328	[arch/arm/mach-sd511x/core.c]
+
+sd511x_init	333	[arch/arm/mach-sd511x/core.c]
+
+sd511x_init	357	[arch/arm/mach-sd511x/core.c]
+
+sd511x_init	363	[arch/arm/mach-sd511x/core.c]
+
+Linux version 2.6.34.10_sd5115v100_wr4.3 (root@wuhci2lslx00069) (gcc version 4.4.6 (GCC) ) #1 Mon Apr 18 21:17:55 CST 2016
+PHYS_OFFSET = 80100000.
+CPU: ARMv7 Processor [414fc091] revision 1 (ARMv7), cr=50c53c7f
+CPU: VIPT nonaliasing data cache, VIPT nonaliasing instruction cache
+Machine: sd511x
+Memory policy: ECC disabled, Data cache writeback
+SD511x chip id:0x51161110
+
+apb bus clk is 100000000
+Built 1 zonelists in Zone order, mobility grouping on.  Total pages: 7874
+Kernel command line: noalign mem=31M console=ttyAMA1,115200 root=/dev/mtdblock8 mtdparts=hi_sfc:0x40000(startcode)ro,0x40000(bootA)ro,0x40000(bootB)ro,0x40000(flashcfg)ro,0x40000(slave_param)ro,0x200000(kernelA)ro,0x200000(kernelB)ro,0x480000(rootfsA)ro,0x480000(rootfsB)ro,0x180000(file_system),-(reserved) pcie0_sel=x1 maxcpus=0 user_debug=0x1f panic=1 skb_priv=128
+PID hash table entries: 128 (order: -3, 512 bytes)
+Dentry cache hash table entries: 4096 (order: 2, 16384 bytes)
+Inode-cache hash table entries: 2048 (order: 1, 8192 bytes)
+Memory: 31MB = 31MB total
+Memory: 30024k/30024k available, 1720k reserved, 0K highmem
+Virtual kernel memory layout:
+    vector  : 0xffff0000 - 0xffff1000   (   4 kB)
+    fixmap  : 0xfff00000 - 0xfffe0000   ( 896 kB)
+    DMA     : 0xffc00000 - 0xffe00000   (   2 MB)
+    vmalloc : 0xc2000000 - 0xf8000000   ( 864 MB)
+    lowmem  : 0xc0000000 - 0xc1f00000   (  31 MB)
+    modules : 0xbf800000 - 0xc0000000   (   8 MB)
+      .init : 0xc0008000 - 0xc0019000   (  68 kB)
+      .text : 0xc0019000 - 0xc013c000   (1164 kB)
+      .data : 0xc0148000 - 0xc015a540   (  74 kB)
+SLUB: Genslabs=11, HWalign=32, Order=0-3, MinObjects=0, CPUs=1, Nodes=1
+NR_IRQS:160
+Calibrating delay loop... 663.55 BogoMIPS (lpj=3317760)
+Mount-cache hash table entries: 512
+CPU: Testing write buffer coherency: ok
+Init trace_clock_cyc2ns: precalc_mult = 312500, precalc_shift = 8
+hi_wdt: User-Mode!
+hi_wdt: Init sucessfull!
+NET: Registered protocol family 16
+check_res_of_trace_clock: sched_clock() high resolution
+Serial: dw  uart driver
+uart:0: ttyAMA0 at MMIO 0x1010e000 (irq = 77) is a AMBA/DW
+uart:1: ttyAMA1 at MMIO 0x1010f000 (irq = 78) is a AMBA/DW
+console [ttyAMA1] enabled
+bio: create slab <bio-0> at 0
+Switching to clocksource timer1
+NET: Registered protocol family 2
+IP route cache hash table entries: 128 (order: -3, 512 bytes)
+TCP established hash table entries: 1024 (order: 1, 8192 bytes)
+TCP bind hash table entries: 1024 (order: 0, 4096 bytes)
+TCP: Hash tables configured (established 1024 bind 1024)
+TCP reno registered
+NET: Registered protocol family 1
+squashfs: version 4.0 (2009/01/31) Phillip Lougher
+JFFS2 version 2.2. (NAND) © 2001-2006 Red Hat, Inc.
+msgmni has been set to 58
+io scheduler noop registered (default)
+brd: module loaded
+Spi id table Version 1.22
+Spi Flash Controller V300 Device Driver, Version 1.10
+Spi(cs1) ID: 0x01 0x20 0x18 0x4D 0x00 0x80
+Spi(cs1): Block:256KB Chip:16MB (Name:S25FL129P0)
+Lock Spi Flash(cs1)!
+Hisilicon flash: registering whole flash at once as master MTD
+11 cmdlinepart partitions found on MTD device hi_sfc
+Creating 11 MTD partitions on "hi_sfc":
+0x000000000000-0x000000040000 : "startcode"
+0x000000040000-0x000000080000 : "bootA"
+0x000000080000-0x0000000c0000 : "bootB"
+0x0000000c0000-0x000000100000 : "flashcfg"
+0x000000100000-0x000000140000 : "slave_param"
+0x000000140000-0x000000340000 : "kernelA"
+0x000000340000-0x000000540000 : "kernelB"
+0x000000540000-0x0000009c0000 : "rootfsA"
+0x0000009c0000-0x000000e40000 : "rootfsB"
+0x000000e40000-0x000000fc0000 : "file_system"
+0x000000fc0000-0x000001000000 : "reserved"
+Special nand id table Version 1.33
+SD5116s cannot load Nand Flash Controller 
+PPP generic driver version 2.4.2
+PPP MPPE Compression module registered
+NET: Registered protocol family 24
+TCP cubic registered
+NET: Registered protocol family 17
+ThumbEE CPU extension supported.
+VFS: Mounted root (squashfs filesystem) readonly on device 31:8.
+Freeing init memory: 68K
+
+init started: BusyBox v1.18.4 (2016-04-18 07:12:12 CST)
+
+starting pid 30, tty '': '/etc/rc.d/rc.sysinit'
+mount file system
+====system used 0[0]====
+fenghe.linux4.3
+
+Setting hostname: 
+Setting up interface lo: 
+==== system mount used [4572], system total [4572], free [27172] ====
+Running local startup scripts.
+
+*******************************************
+--==        Welcome To IAS WAP         ==--
+--==   Huawei Technologies Co., Ltd.   ==--
+*******************************************
+IAS WAP Ver:V800R015C10SPC212B000
+IAS WAP Timestamp:2016/04/18 07:13:45
+*******************************************
+
+==== system wap used [28], system total [4600], free [27144] ====
+hw_ssp_basic: module license 'Huawei Tech. Co., Ltd.' taints kernel.
+Disabling lock debugging due to kernel taint
+soft lockup args:snap=150; release=50; dump flag=1;
+
+hw_dm_init successfully...
+
+Soc himem config loaded[51161] /etc/wap/wap_ssp_basic.5116s.cfg
+
+Lastword meminfo:0x80002000;0x000fe000;1;
+
+current lastword info:Add=0xc2206000;max_num=300;Add1=0xc2201000;Add2=0xc2206000;Add3=0xc220b000;
+
+==== ssmp wap used [176], ssmp total [176], free [26968] ====
+/etc/rc.d/rc.sysinit: /etc/rc.d/rc.start/0.wap_init.sh: line 81: chown: not found
+reload log OK!
+
+/sbin/Reloadlog: line 4: can't create /proc/wap_proc/wap_debug_log: nonexistent directory
+/sbin/Reloadlog: line 5: can't create /proc/wap_proc/flow_log: nonexistent directory
+/sbin/Reloadlog: line 6: can't create /proc/wap_proc/dhcpd_log: nonexistent directory
+/sbin/Reloadlog: line 7: can't create /proc/wap_proc/dhcpd_log: nonexistent directory
+Get kernel version:2.6.34
+Rootfs time stamp:2016-04-18_21:19:11
+SVN label(ont):User init start......
+Loading the SD5115V100 modules: 
+
+
+ SYSCTL module is installed
+
+
+ PIE module is installed
+
+
+  FUNC = hi_kernel_gpio_init:1370 
+
+ 5116 (0x4) can't insmod 5115 mod
+ 
+
+
+
+ GPIO module is installed
+
+
+ I2C module is installed
+
+
+ TIMER module is installed
+
+
+ SPI module is installed
+
+
+  FUNC = hi_kernel_dp_init:161 
+
+ 5116/5118 (0x4) can't insmod 5115 mod
+ 
+
+
+
+ fail to install BRIDGE module
+
+
+ BRIDGE module is installed
+
+
+ GPON module is installed
+
+
+ EPON module is installed
+
+
+ OAM module is installed
+
+
+ hi_adp_cnt module is installed
+ifconfig eth0 hw ether 38:4C:4F:1A:ED:5E
+Loading the EchoLife WAP modules: LDSP
+COMMON For LDSP Install Successfully...
+
+I2C For LDSP Install Successfully...
+
+GPIO For LDSP Install Successfully...
+
+
+
+ ------ SOC is 5116 S PILOT ------ 
+
+<ldsp>board version is 5023
+
+<ldsp>pcb version is 0
+
+<ldsp>orig board version is 2
+
+CHIPADP-SD5115 BASIC For LDSP Install Successfully...
+LSW L2 For LDSP Install Successfully...
+DEV For LDSP Install Successfully...
+
+[DM]:board_ver=5023,pcb_ver=0
+
+hw_dm_init_data successfully...
+
+pots_num=0
+
+ssid_num=0
+
+ usb_num=0
+
+hw_route=1
+
+   l3_ex=1
+    ipv6=0
+OPTIC For LDSP Install Successfully...
+
+KEY For LDSP Install Successfully...
+
+LED For LDSP Install Successfully...
+
+RF For LDSP Install Successfully...
+
+Loading BBSP L2 modules: 
+insmod: can't insert '/lib/modules/wap/l2ffwd.ko': No such file or directory
+PTP For BBSP Install Successfully...
+
+dhcp_module_init load success !
+
+
+
+ pppoe_module_init load success !
+
+l2base For BBSP Install Successfully...
+
+[Error]received netlink trace message. src pid:0;
+
+[Error]received netlink trace message. src pid:0;
+
+[Error]received netlink trace message. src pid:0;
+
+[Error]received netlink trace message. src pid:0;
+
+[Error]received netlink trace message. src pid:0;
+
+
+[ker_L2M_CTP] for bbsp Install Successfully...
+xpon_mode:1
+PLOAM For LDSP Install Successfully...
+
+GMAC For LDSP Install Successfully...
+
+l2ext For BBSP Install Successfully...
+
+
+
+------y1731_ker_hook installed!-----
+
+ker_video_diag For BBSP Install Successfully...
+
+=======memory used: system:4600 ssmp:176 amp:0 bbsp:0 ldsp:0 sdk:0======
+Start ldsp_user...0
+<LDSP> system has no slave space for bob 
+
+<LDSP_CFG> Set uiUpMode=1 [1:GPON,2:EPON,4:AUTO]
+
+read data is over time
+ 
+
+SD511X test self OK
+
+Optic test self ERROR
+
+WIFI test self NoCheck
+
+PHY[1] test self OK
+
+PHY[2] test self OK
+
+PHY[3] test self OK
+
+PHY[4] test self OK
+
+
+
+<LDSP> 5171 optic 
+
+FILE = /usr1/code/ICP_ONT_V300R015C10_Compile/code/current/ONT_Code/CI/Make/../../Source/ldsp/driver/optic/hw_ker_drv_optic.c 
+
+LINE =  7498, FUNC = hw_drv_optic_cal_sw_ver_set 
+
+<LDSP> read cal version file error 
+
+1
+
+
+<LDSP> bob optic was calibrated 
+
+2
+<LDSP> optic firmware load success! 
+
+GPON init success ! 
+
+ssmp bbsp igmp amp ethoam omci
+Start start pid=189; uiProcNum=6;
+
+
+starting pid 204, tty '/dev/ttyAMA1': '-/bin/"console.sh"'
+profile close core dump
+InitFrame omci; PID=193; state=0; 23.697;
+
+InitFrame omci; PID=193; in state=0; 23.697;
+
+InitFrame omci; PID=193; out state=0; 23.698;
+
+InitFrame igmp; PID=194; state=0; 23.750;
+
+InitFrame igmp; PID=194; in state=0; 23.751;
+
+InitFrame igmp; PID=194; out state=0; 23.753;
+
+InitFrame amp; PID=192; state=0; 24.116;
+
+InitFrame amp; PID=192; in state=0; 24.117;
+
+InitFrame amp; PID=192; out state=0; 24.130;
+
+InitFrame bbsp; PID=191; state=0; 24.238;
+
+InitFrame bbsp; PID=191; in state=0; 24.239;
+
+InitFrame bbsp; PID=191; out state=0; 24.242;
+
+InitFrame ethoam; PID=195; state=0; 24.283;
+
+InitFrame ethoam; PID=195; in state=0; 24.284;
+
+InitFrame ethoam; PID=195; out state=0; 24.289;
+
+InitFrame ssmp; PID=190; state=0; 24.444;
+
+InitFrame ssmp; PID=190; in state=0; 24.445;
+
+HW_SWM_GetAddrFromMtdName SUCCESS, uiOffsetAddr = 0xc0000==
+
+DBCTree Init Ok!
+
+HW_DM_PDT_GetResetFlag_From_SDK uiReason = 0 
+
+Reset reason: lossing power!
